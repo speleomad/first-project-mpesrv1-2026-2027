@@ -1,0 +1,21 @@
+<h3>User infos</h3>
+<ul>
+    <li><strong>Name:</strong>{{info.name}}</li>
+    <li><strong>Email:</strong>{{info.email}}</li>
+    <li><strong>Tel:</strong>{{info.tel}}S</li>
+</ul>
+<div>
+    <input type="text" placeholder="new comment" [(ngModel)]="comment.message">
+    <button (click)="onAddComment()" [disabled]="newComment">
+        Add Comment
+    </button>
+</div>
+<div *ngIf="comments.length>0; else noComments">
+    <h3>Messages</h3>
+    <div *ngFor="let comment of comments">
+        {{comment.message}} - {{comment.date | date}}
+    </div>
+</div>
+<ng-template #noComments>
+   <h4>No comment found!</h4>
+</ng-template>
