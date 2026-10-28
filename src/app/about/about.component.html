@@ -1,21 +1,29 @@
-<h3>User infos</h3>
-<ul>
-    <li><strong>Name:</strong>{{info.name}}</li>
-    <li><strong>Email:</strong>{{info.email}}</li>
-    <li><strong>Tel:</strong>{{info.tel}}S</li>
-</ul>
-<div>
-    <input type="text" placeholder="new comment" [(ngModel)]="comment.message">
-    <button (click)="onAddComment()" [disabled]="newComment">
-        Add Comment
-    </button>
-</div>
-<div *ngIf="comments.length>0; else noComments">
-    <h3>Messages</h3>
-    <div *ngFor="let comment of comments">
-        {{comment.message}} - {{comment.date | date}}
+ <div class="card border-primary  mt-5 mb-3">
+        <div class="card-header bg-primary text-white "> About Component</div>
+        <div class="card-body">
+            <ul>
+                <li>Name : {{info.name}} </li>
+                <li>Email : {{info.email}} </li>
+                <li>Tel : {{info.tel}} </li>
+            </ul>
+            <div class="form-group">
+                <label>Message</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Your message" [(ngModel)]="comment.message">
+                </div>
+                <button class="btn btn-primary" (click)="onAddComment()" [disabled]="newComment"> Add Comment</button>
+            </div>
+            <div *ngIf="comments.length>0 ; else noComments">
+                <h3>Messages</h3>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"
+                        *ngFor="let comment of comments">
+                        {{comment.message}}<span class="badge badge-secondary badge-pill">{{comment.date | date:'HH:mm:ss'}}</span>
+                    </li>
+                </ul>
+            </div>
+            <ng-template #noComments>
+                <p>No Comments</p>
+            </ng-template>
+        </div>
     </div>
-</div>
-<ng-template #noComments>
-   <h4>No comment found!</h4>
-</ng-template>

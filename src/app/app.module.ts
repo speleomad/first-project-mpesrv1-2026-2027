@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
+import { NameComponent } from './name/name.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    ContactsComponent
+    ContactsComponent,
+    NameComponent
   ],
   imports: [
     BrowserModule,
