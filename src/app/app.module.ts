@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
 import { NameComponent } from './name/name.component';
+import { GetCharPipe } from './pipes/get-char.pipe';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NameComponent } from './name/name.component';
     AppComponent,
     AboutComponent,
     ContactsComponent,
-    NameComponent
+    NameComponent,
+    GetCharPipe
   ],
   imports: [
     BrowserModule,
