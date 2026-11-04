@@ -8,6 +8,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
 import { NameComponent } from './name/name.component';
 import { GetCharPipe } from './pipes/get-char.pipe';
+import { CommentComponent } from './comment/comment.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { GetCharPipe } from './pipes/get-char.pipe';
     AboutComponent,
     ContactsComponent,
     NameComponent,
-    GetCharPipe
+    GetCharPipe,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
